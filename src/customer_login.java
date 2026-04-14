@@ -84,5 +84,9 @@ public class customer_login extends JFrame {
                 }
             }
         });
+        setSize(400,400);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
