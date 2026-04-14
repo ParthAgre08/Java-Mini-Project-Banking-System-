@@ -25,6 +25,7 @@ Password
     JLabel l1,l2,l3,l4,l5,l6,l7,l8;
     JButton b ;
     String account_type ="";
+    String username;
 
     customer_register(){
         l1 = new JLabel("Create Account ");
@@ -50,6 +51,7 @@ Password
 
         l7 = new JLabel("Enter username :- ");
         j5 = new JTextField(20);
+        username = j5.getText();
 
         l8 = new JLabel("Enter password :- ");
         j6 = new JTextField(20);
@@ -118,7 +120,7 @@ Password
                     ps.setString(3, j3.getText());   // email
                     ps.setString(4, account_type);   // account_type
                     ps.setDouble(5, Integer.parseInt(j4.getText()));   // balance
-                    ps.setString(6, j5.getText());   // username
+                    ps.setString(6, username);   // username
                     ps.setString(7, j6.getText());   // password
 
 
@@ -128,7 +130,7 @@ Password
 
                     if (row > 0) {
                         System.out.println("register Successful");
-                        new customer_dashboard();
+                        new customer_dashboard(username);
                         dispose();
                     } else {
                         System.out.println("Registration Failed ");

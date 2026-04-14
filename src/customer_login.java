@@ -11,11 +11,13 @@ public class customer_login extends JFrame {
     JLabel l1, l2, l3, l4, l5;
     JTextField j1, j2;
     JButton b;
+    String username;
 
     customer_login() {
         l1 = new JLabel("Customer Login \n\n");
         l2 = new JLabel("Enter Username :- ");
         j1 = new JTextField(20);
+        username = j1.getText();
         l3 = new JLabel("Enter Password :- ");
         j2 = new JTextField(20);
         b = new JButton("\n\nClick to Login");
@@ -69,7 +71,7 @@ public class customer_login extends JFrame {
                         */
                     if (rs.next()) {
                         System.out.println("Login Successful");
-                        new customer_dashboard();
+                        new customer_dashboard(username);
                         dispose();
                     } else {
                         System.out.println("Invalid Credentials");
